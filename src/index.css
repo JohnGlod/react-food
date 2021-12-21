@@ -26,3 +26,32 @@ nav {
 .footer {
   padding: 1.5em 0;
 }
+
+img, iframe {
+  max-width: 100%;
+}
+
+iframe {
+  width: 600px;
+  height: 350px;
+}
+
+.ingredients {
+  max-width: 300px;
+  justify-self: center;
+
+}
+
+.recipe__help {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content:center;
+}
+@media (min-width: 1200px) {
+  .recipe__help{
+    justify-content: space-between;
+  }
+}

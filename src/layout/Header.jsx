@@ -1,20 +1,21 @@
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header className='header'>
       <nav>
         <div className='nav-wrapper'>
-          <a href='#!' className='brand-logo'>
+          <Link className='brand-logo' to='/'>
             Logo
-          </a>
+          </Link>
           <a href='#!' data-target='mobile-demo' className='sidenav-trigger'>
             <i className='material-icons'>menu</i>
           </a>
           <ul className='right hide-on-med-and-down'>
             <li>
-              <a href='https://github.com/JohnGlod'>Repo</a>
+              <Link to='/about'>About</Link>
             </li>
             <li>
-              <a href='!#'>Home</a>
+              <Link to='/contacts'>Contacts </Link>
             </li>
           </ul>
         </div>
@@ -22,10 +23,10 @@ const Header = () => {
 
       <ul className='sidenav' id='mobile-demo'>
         <li>
-          <a href='https://github.com/JohnGlod'>Repo</a>
+          <Link to='/about'>About</Link>
         </li>
         <li>
-          <a href='!#'>Home</a>
+          <Link to='/contacts'>Contacts </Link>
         </li>
       </ul>
     </header>
