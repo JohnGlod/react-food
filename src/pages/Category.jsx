@@ -10,14 +10,21 @@ const Category = () => {
   const [meals, setMeals] = useState([]);
   const navigate = useNavigate();
 
-  function handleClick() {
-    navigate('/');
-  }
+  const goBack = () => navigate(-1);
+
   useEffect(() => {
     getFilteredCategory(name).then((data) => setMeals(data.meals));
   }, [name]);
-  return <>      <button className='btn' onClick={handleClick}>Go back!</button>
-  {!meals.length ? <Preloader /> : <MealsList meals={meals} />}</>;
+
+  return (
+    <>
+      {' '}
+      <button className='btn' onClick={goBack}>
+        Go back!
+      </button>
+      {!meals.length ? <Preloader /> : <MealsList meals={meals} />}
+    </>
+  );
 };
 
 export { Category };

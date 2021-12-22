@@ -6,10 +6,7 @@ import { Preloader } from '../components/Preloader/Preloader';
 const Recipe = () => {
   const [recipe, setRecipe] = useState({});
   const navigate = useNavigate();
-
-  function handleClick() {
-    navigate(-1);
-  }
+  const goBack = () => navigate(-1);
 
   const { id } = useParams();
 
@@ -19,7 +16,7 @@ const Recipe = () => {
 
   return (
     <>
-      <button className='btn' onClick={handleClick}>
+      <button className='btn' onClick={goBack}>
         Go back!
       </button>
       {!recipe.idMeal ? (

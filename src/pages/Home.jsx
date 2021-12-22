@@ -10,6 +10,7 @@ function Home() {
   const [filteredCatalog, setFilteredCatalog] = useState([]);
 
   const { pathname, search } = useLocation();
+
   const navigate = useNavigate();
   const handleSearch = (str) => {
     setFilteredCatalog(
@@ -17,7 +18,7 @@ function Home() {
         item.strCategory.toLowerCase().includes(str.toLowerCase())
       )
     );
-    navigate(pathname, `?search=${str}`);
+    navigate(`?search=${str}`, {replace: true});
   };
   
   useEffect(() => {

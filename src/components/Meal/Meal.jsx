@@ -13,7 +13,7 @@ const Meal = (props) => {
           <p>{strMeal.slice(0, 90)}...</p>
         </div>
         <div className='card-action'>
-          <Link to={`/meal/${idMeal}`} className='btn'>Watch category</Link>
+          <Link to={`/meal/${idMeal}`} className='btn'>Watch recipe </Link>
         </div>
       </div>
     </div>
