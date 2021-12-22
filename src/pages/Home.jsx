@@ -19,6 +19,7 @@ function Home() {
     );
     navigate(pathname, `?search=${str}`);
   };
+  
   useEffect(() => {
     getAllCategories().then((data) => {
       setCatalog(data.categories);

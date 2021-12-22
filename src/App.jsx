@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Header } from './layout/Header';
-import { Footer } from './layout/Footer';
+import { Layout } from './layout/Layout';
 
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
@@ -12,18 +11,16 @@ import {Recipe} from './pages/Recipe'
 const App = () => {
   return (
     <div className='page'>
-      <Header />
-      <main className='container content'>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/contacts' element={<Contact />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/category/:name' element={<Category />} />
-        <Route path='/meal/:id' element={<Recipe />} />
-        <Route path='*' element={<NotFound /> } /> 
+        <Route path='/' element={<Layout />} >
+          <Route index  element={<Home />} />
+          <Route path='contacts' element={<Contact />} />
+          <Route path='about' element={<About />} />
+          <Route path='category/:name' element={<Category />} />
+          <Route path='meal/:id' element={<Recipe />} />
+          <Route path='*' element={<NotFound /> } />
+        </Route> 
       </Routes>
-      </main>
-      <Footer />
     </div>
   );
 };
